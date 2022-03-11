@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ShowInfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name_txv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/corner"
+        android:backgroundTint="#4FC3F7"
+        android:minHeight="46dp"
+        android:padding="10dp"
+        android:textColor="#e6447b"
+        android:textSize="18sp"
+        tools:text="Full Name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/username_txv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/corner"
+        android:backgroundTint="#4FC3F7"
+        android:minHeight="46dp"
+        android:padding="10dp"
+        android:textColor="#e6447b"
+        android:textSize="18sp"
+        tools:text="Username" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/email_txv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/corner"
+        android:backgroundTint="#4FC3F7"
+        android:minHeight="46dp"
+        android:padding="10dp"
+        android:textColor="#e6447b"
+        android:textSize="18sp"
+        tools:text="Email" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/password_txv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/corner"
+        android:backgroundTint="#4FC3F7"
+        android:minHeight="46dp"
+        android:padding="10dp"
+        android:textColor="#e6447b"
+        android:textSize="18sp"
+        tools:text="Password" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/gender_txv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/corner"
+        android:backgroundTint="#4FC3F7"
+        android:minHeight="46dp"
+        android:padding="10dp"
+        android:textColor="#e6447b"
+        android:textSize="18sp"
+        tools:text="Gender" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hideInfo_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#E831D5"
+        android:minHeight="60dp"
+        android:text="@string/save_info"
+        android:textAllCaps="false"
+        app:cornerRadius="25dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</ScrollView>
