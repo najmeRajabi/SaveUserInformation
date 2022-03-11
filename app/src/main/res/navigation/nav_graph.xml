@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/enterInfoFragment">
+
+    <fragment
+        android:id="@+id/enterInfoFragment"
+        android:name="com.example.saveuserinformation.enterInfoFragment"
+        android:label="fragment_enter_info"
+        tools:layout="@layout/fragment_enter_info" >
+        <action
+            android:id="@+id/action_enterInfoFragment_to_showInfoFragment"
+            app:destination="@id/showInfoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/showInfoFragment"
+        android:name="com.example.saveuserinformation.ShowInfoFragment"
+        android:label="fragment_show_info"
+        tools:layout="@layout/fragment_show_info" />
+</navigation>
