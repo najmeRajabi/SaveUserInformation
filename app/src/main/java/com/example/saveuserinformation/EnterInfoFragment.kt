@@ -38,9 +38,17 @@ class EnterInfoFragment : Fragment() {
     private fun register() {
         if(checkInfo()){
             sendInfo()
+            deleteFiled()
             goToFragmentShowInfo()
         }
 
+    }
+
+    private fun deleteFiled() {
+        binding.nameEditText.setText("")
+        binding.usernameEditText.setText("")
+        binding.emailEditText.setText("")
+        binding.passwordEditText.setText("")
     }
 
     private fun goToFragmentShowInfo() {
