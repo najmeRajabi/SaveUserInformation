@@ -49,6 +49,7 @@ class EnterInfoFragment : Fragment() {
         binding.usernameEditText.setText("")
         binding.emailEditText.setText("")
         binding.passwordEditText.setText("")
+        binding.repeatPasswordEditText.setText("")
     }
 
     private fun goToFragmentShowInfo() {
