@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/enterInfoFragment"
-        android:name="com.example.saveuserinformation.enterInfoFragment"
+        android:name="com.example.saveuserinformation.EnterInfoFragment"
         android:label="fragment_enter_info"
         tools:layout="@layout/fragment_enter_info" >
         <action
