@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.saveuserinformation.databinding.FragmentEnterInfoBinding
 
@@ -56,11 +57,9 @@ class EnterInfoFragment : Fragment() {
         }else{
             Gender.Male
         }
-        bundle .putString("name" , name)
-        bundle .putString("username" , username)
-        bundle .putString("email" , email)
-        bundle .putString("password" , password)
-        bundle .putString("gender" , gender.name)
+        bundle = bundleOf("name" to name ,"username" to username
+            ,"email" to email , "password" to password ,"gender" to gender.name )
+
     }
 
     private fun checkInfo():Boolean {

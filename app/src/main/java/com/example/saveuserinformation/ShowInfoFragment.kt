@@ -20,8 +20,18 @@ class ShowInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentShowInfoBinding.inflate(layoutInflater,container,false)
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_show_info, container, false)
+
+        var name = requireArguments().getString("name")
+        var username = requireArguments().getString("username")
+        var email = requireArguments().getString("email")
+        var password = requireArguments().getString("password")
+        var gender = requireArguments().getString("gender")
+
+        binding.nameTxv.text = name
+        binding.usernameTxv.text =username
+        binding.emailTxv.text = email
+        binding.passwordTxv.text = password
+        binding.genderTxv.text = gender
         return binding.root
     }
 
