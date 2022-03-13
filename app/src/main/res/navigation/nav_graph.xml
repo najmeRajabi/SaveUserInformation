@@ -15,11 +15,19 @@
             app:destination="@id/showInfoFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
-            app:popEnterAnim="@android:anim/fade_in" />
+            app:popEnterAnim="@android:anim/fade_in">
+            <argument
+                android:name="bundle"
+                app:argType="bundle"
+                />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/showInfoFragment"
         android:name="com.example.saveuserinformation.ShowInfoFragment"
         android:label="fragment_show_info"
-        tools:layout="@layout/fragment_show_info" />
+        tools:layout="@layout/fragment_show_info" >
+        <argument android:name="bundle"
+                  app:argType="bundle"/>
+    </fragment>
 </navigation>
