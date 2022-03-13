@@ -15,6 +15,7 @@ class EnterInfoFragment : Fragment() {
 
     lateinit var binding: FragmentEnterInfoBinding
     lateinit var bundle: Bundle
+    private lateinit var user :User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,10 +54,13 @@ class EnterInfoFragment : Fragment() {
     }
 
     private fun goToFragmentShowInfo() {
-        findNavController().navigate(R.id.action_enterInfoFragment_to_showInfoFragment , bundle)
+        val action = EnterInfoFragmentDirections.
+        actionEnterInfoFragmentToShowInfoFragment(user)
+        findNavController().navigate(action)
     }
 
     private fun sendInfo() {
+
         var name = binding.nameEditText.text.toString()
         val username = binding.usernameEditText.text.toString()
         val email = binding.emailEditText.text.toString()
@@ -66,9 +70,9 @@ class EnterInfoFragment : Fragment() {
         }else{
             Gender.Male
         }
-        bundle = bundleOf("name" to name ,"username" to username
-            ,"email" to email , "password" to password ,"gender" to gender.name )
-
+        user= User(name, username, email, password, gender)
+//        bundle = bundleOf("name" to name ,"username" to username
+//            ,"email" to email , "password" to password ,"gender" to gender.name )
     }
 
     private fun checkInfo():Boolean {

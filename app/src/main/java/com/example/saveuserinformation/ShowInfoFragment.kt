@@ -8,9 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.saveuserinformation.databinding.FragmentShowInfoBinding
 
 class ShowInfoFragment : Fragment() {
+
+
+    val args : ShowInfoFragmentArgs by navArgs()
 
     lateinit var binding: FragmentShowInfoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,17 +22,25 @@ class ShowInfoFragment : Fragment() {
 
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentShowInfoBinding.inflate(layoutInflater,container,false)
 
-        var name = requireArguments().getString("name")
-        var username = requireArguments().getString("username")
-        var email = requireArguments().getString("email")
-        var password = requireArguments().getString("password")
-        var gender = requireArguments().getString("gender")
+        val amount = args.user
+        val user = amount as User
+        val name = user.name
+        val username = user.username
+        val email = user.email
+        val password = user.password
+        val gender = user.gender.name
+//        var name = requireArguments().getString("name")
+//        var username = requireArguments().getString("username")
+//        var email = requireArguments().getString("email")
+//        var password = requireArguments().getString("password")
+//        var gender = requireArguments().getString("gender")
 
         binding.nameTxv.text = name
         binding.usernameTxv.text =username
@@ -57,6 +69,12 @@ class ShowInfoFragment : Fragment() {
         editor?.putString("EMAIL" ,binding.emailTxv.text.toString())
         editor?.putString("GENDER" ,binding.genderTxv.text.toString())
         Toast.makeText(activity,"saved " , Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
     }
 
 
